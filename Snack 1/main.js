@@ -46,21 +46,28 @@ for (let i = 0; i < bici.length; i++) {
     }
 }
 
-// Stampo a schermo l'elenco delle bici 
-const elencoBiciEl = document.getElementById('elencoBici');
-
-
-
-// Chiamo la funzione per stampare l'elenco delle bici nell'elemento HTML
-elencoBiciEl.innerHTML = stampaElencoBici(bici);
-
-
 // Stampo a schermo la bici più leggera chiamando la funzione stampaBiciLeggera
 const biciEl = document.getElementById('biciLeggera');
 biciEl.innerHTML = stampaBiciLeggera(biciPiuLeggera, pesoMinore);
 
 
+// Creo una funzione per stampare la bici più leggera
+function stampaBiciLeggera(biciPiuLeggera, peso) {
+    return `<h4>
+        La bicicletta più leggera è la n°${biciPiuLeggera},
+        che pesa ${peso} grammi! 
+    </h4>`
+}
 
+
+
+//BONUS
+
+// Stampo a schermo l'elenco delle bici 
+// selezione dell'elemento HTML in cui stampare l'elenco
+const elencoBiciEl = document.getElementById('elencoBici');
+// Chiamo la funzione per stampare l'elenco delle bici nell'elemento HTML
+elencoBiciEl.innerHTML = stampaElencoBici(bici);
 
 // Creo una funzione per stampare l'elenco delle bici
 function stampaElencoBici(bici) {
@@ -71,12 +78,4 @@ function stampaElencoBici(bici) {
     }
     html += '</ul>';
     return html;
-}
-
-// Creo una funzione per stampare la bici più leggera
-function stampaBiciLeggera(biciPiuLeggera, peso) {
-    return `<h4>
-        La bicicletta più leggera è la n°${biciPiuLeggera},
-        che pesa ${peso} grammi! 
-    </h4>`
 }
